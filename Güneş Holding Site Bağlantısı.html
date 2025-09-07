@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Güneş Holding</title>
+    <style>
+        /* Genel Ayarlar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1f1f1f;
+            color: #fff;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(45deg, #ffbc00, #ff6600);
+            color: #fff;
+            text-align: center;
+            padding: 60px 0;
+        }
+        header h1 {
+            font-size: 48px;
+            letter-spacing: 3px;
+        }
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 15px 0;
+        }
+        nav a {
+            color: #fff;
+            font-size: 18px;
+            padding: 14px 20px;
+            margin: 0 15px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ff6600;
+            border-radius: 30px;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://via.placeholder.com/1600x800/ff6600/ffffff?text=G%C3%BCne%C5%9F+Holding');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .hero h2 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        /* Hizmetler Bölümü */
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+            padding: 0 50px;
+            text-align: center;
+        }
+        .service {
+            background: #2c2c2c;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 23%;
+            transition: transform 0.3s ease;
+        }
+        .service img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        .service h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .service p {
+            font-size: 16px;
+            color: #ddd;
+        }
+        .service:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Ürün Satış Bölümü */
+        .products {
+            background-color: #333;
+            padding: 50px 0;
+        }
+        .products h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ffbc00;
+        }
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 0 50px;
+        }
+        .product {
+            background: #444;
+            width: 30%;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product h3 {
+            font-size: 24px;
+            margin-top: 15px;
+            color: #ffbc00;
+        }
+        .product p {
+            font-size: 16px;
+            color: #ddd;
+            margin: 10px 0;
+        }
+        .product .price {
+            font-size: 18px;
+            color: #ff6600;
+        }
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        /* İletişim Bölümü */
+        .contact {
+            background-color: #444;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffbc00;
+        }
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #ddd;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact input, .contact textarea {
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #555;
+            padding: 15px;
+            margin: 10px 0;
+            width: 60%;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .contact button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .contact button:hover {
+            background-color: #ffbc00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #ddd;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service {
+                width: 80%;
+                margin: 20px 0;
+            }
+            .products .product-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product {
+                width: 80%;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Güneş Holding</h1>
+        <p>Güvenlik, Siber Bilişim, Bilgisayar ve Web Tasarımı Hizmetleri</p>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#home">Ana Sayfa</a>
+        <a href="#services">Hizmetlerimiz</a>
+        <a href="#products">Ürünler</a>
+        <a href="#testimonials">Müşteri Yorumları</a>
+        <a href="#contact">İletişim</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Güneş Holding olarak güvenlik, bilişim ve tasarım alanlarında sizlere kaliteli hizmet sunuyoruz.</h2>
+        <p>Hakkımızda:2024 Yılında Kurulan Şirketimiz Size Hizmet Etmeye Hazır.Yarının Teknolojisi, Bugünün Çözümleri Kurucu:Ege Güneş</p>
+    </section>
+
+    <!-- Hizmetler Bölümü -->
+    <section id="services" class="services">
+        <div class="service">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgGtQbAmXlxzZrc5uTvHPrVjjvo1APtR64kQ&s" alt="Güvenlik">
+            <h3>Güvenlik</h3>
+            <p>Yüksek güvenlik çözümleri ile dijital dünyanızı koruyoruz.</p>
+        </div>
+        <div class="service">
+            <img src="https://www.sinaneroglu.av.tr/wp-content/uploads/2022/12/siber-guvenlik-suclai-nelerdir.jpg" alt="Siber Bilişim">
+            <h3>Siber Bilişim</h3>
+            <p>Veri güvenliği ve altyapı çözümleri ile işlerinizin güvenliğini sağlıyoruz.</p>
+        </div>
+        <div class="service">
+            <img src="https://www.avansas.com/blog/wp-content/uploads/2020/07/Firewall-JenerikBlog-160720.jpg" alt="Bilgisayar">
+            <h3>Bilgisayar</h3>
+            <p>Teknolojik ihtiyaçlarınıza uygun bilgisayar çözümleri sunuyoruz.</p>
+        </div>
+    </section>
+
+    <!-- Ürün Satış Bölümü -->
+    <section id="products" class="products">
+        <h2>Ürünlerimiz</h2>
+        <div class="product-container">
+           <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRaCnLahEJX7A7H1lE1r9wbrUJfwBEcPt3Q3j_Z_ARtlyWEFevWfPMa9YjFoxP_BfGTScUFXW4A0QO2aDX_xaFC3kYrCNYA1ejEcFmc0AmwHQQqMw-ICUQOIg" alt="Ürün 2">
+                <h3>Flipper Zero Setimiz</h3>
+                <p>Yüksek kaliteli, dayanıklı Uzaktan Kontrol Çift Anten Desteği İle 3 Km Uzağa Erişimli ürünümüzle tanışın.</p>
+                <p class="price">  ̶ ̶2̶9̶9̶9̶9̶₺  21999̶₺</p>
+            </div>
+
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/51b5bD6s8DL.jpg" alt="Ürün 2">
+                <h3>İos Uyumlu HC flash Wifi</h3>
+                <p>En son teknolojiyle üretilmiş ürünümüz. İos Uyumlu Uzak Bağlantı Ve Erişim Usb</p>
+                <p class="price">  ̶7̶9̶9̶9₺  5999̶₺</p>
+            </div>
+            <div class="product">
+                <img src="https://i.pcmag.com/imagery/articles/034Ds0HEhPXYGjpU93Ceu5H-4..v1641502294.jpg" alt="Ürün 3">
+                <h3>Usb Attack 2024</h3>
+                <p>Usb Üzerinden Saldırılar Uzun ömürlü ve şık tasarım.</p>
+                <p class="price">  ̶5̶9̶9̶9̶₺  4500₺</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Bölümü -->
+    <section id="contact" class="contact">
+        <h2>Bize Ulaşın</h2>
+        <p>Herhangi bir sorunuz mu var? Bize yazın, en kısa sürede geri dönelim!</p>
+        <form>
+            <input type="text" placeholder="Adınız Soyadınız" required>
+            <input type="email" placeholder="E-posta Adresiniz" required>
+            <textarea placeholder="Mesajınız" rows="5" required></textarea>
+            <button type="submit">Gönder</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Güneş Holding &copy; 2025 Tüm Hakları Saklıdır</p>
+    </footer>
+
+</body>
+</html>
